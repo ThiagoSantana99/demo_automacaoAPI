@@ -37,7 +37,7 @@ jobs:
         uses: actions/upload-artifact@v4
         with:
           name: javadocs
-          path: target/site/javadocs
+          path: target/reports/testapidocs/
 
       - name: Publish Javadocs to GitHub Pages
         if: github.event_name == 'push'
@@ -45,6 +45,6 @@ jobs:
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           publish_branch: gh-pages
-          publish_dir: target/site/javadocs
+          publish_dir: target/reports/testapidocs/
           destination_dir: ${{ env.PAGES_DESTINATION_DIR }}
           keep_files: true
