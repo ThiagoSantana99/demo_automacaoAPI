@@ -60,11 +60,16 @@ mvn allure:report
 O workflow em `.github/workflows/ci.yml` executa:
 
 1. `mvn clean test`
-2. Geração do relatório HTML via `mvn allure:report`
-3. Upload dos artefatos `allure-report` e `allure-results`
-4. Publicação do relatório no GitHub Pages em `https://thiagosantana99.github.io/demo_automacaoAPI/reports/` quando o pipeline roda em `push` na branch `main`
+2. Instala o Allure CLI via `npm`
+3. Gera o relatório Allure em `target/allure-report`
+4. Gera o JavaDoc
+5. Publica o site do projeto no GitHub Pages com `README`, `reports` e `javadoc`
 
-O workflow separado em `.github/workflows/javadoc.yml` gera a documentação técnica dos testes e publica em `https://thiagosantana99.github.io/demo_automacaoAPI/javadoc/`.
+As URLs publicadas ficam:
+
+- `https://thiagosantana99.github.io/demo_automacaoAPI/reports/`
+- `https://thiagosantana99.github.io/demo_automacaoAPI/javadoc/`
+- `https://thiagosantana99.github.io/demo_automacaoAPI/README.md`
 
 ## Gerar Javadocs localmente
 
