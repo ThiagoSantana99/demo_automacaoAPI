@@ -100,8 +100,6 @@
                     </execution>
                 </executions>
                 <configuration>
-                    <destDir>javadocs</destDir>
-                    <reportOutputDirectory>${project.build.directory}/site</reportOutputDirectory>
                     <failOnError>true</failOnError>
                     <quiet>true</quiet>
                 </configuration>

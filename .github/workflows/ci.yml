@@ -41,12 +41,12 @@ jobs:
       - name: Prepare GitHub Pages content
         run: |
           mkdir -p target/pages/reports
-          mkdir -p target/pages/javadoc
+          mkdir -p target/reports/testapidocs
           cp README.md target/pages/README.md
           cp -R target/allure-report/. target/pages/reports/
           JAVADOC_DIR=""
-          if [ -d "target/apidocs" ]; then
-            JAVADOC_DIR="target/apidocs"
+          if [ -d "target/reports/testapidocs" ]; then
+            JAVADOC_DIR="target/reports/testapidocs"
           elif [ -d "target/site/apidocs" ]; then
             JAVADOC_DIR="target/site/apidocs"
           fi
