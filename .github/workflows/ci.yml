@@ -36,19 +36,20 @@ jobs:
         run: allure generate target/allure-results --clean -o target/allure-report
 
       - name: Generate JavaDoc
-        run: mvn -B -DskipTests javadoc:javadoc
+        run: mvn -B clean test-compile javadoc:test-javadoc
 
       - name: Prepare GitHub Pages content
         run: |
           mkdir -p target/pages/reports
+          mkdir -p target/pages/javadoc
           mkdir -p target/reports/testapidocs
           cp README.md target/pages/README.md
           cp -R target/allure-report/. target/pages/reports/
           JAVADOC_DIR=""
           if [ -d "target/reports/testapidocs" ]; then
             JAVADOC_DIR="target/reports/testapidocs"
-          elif [ -d "target/site/apidocs" ]; then
-            JAVADOC_DIR="target/site/apidocs"
+          elif [ -d "target/site/javadocs" ]; then
+            JAVADOC_DIR="target/site/javadocs"
           fi
           if [ -n "$JAVADOC_DIR" ]; then
             cp -R "$JAVADOC_DIR"/. target/pages/javadoc/
