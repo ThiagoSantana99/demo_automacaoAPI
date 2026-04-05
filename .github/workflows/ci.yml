@@ -12,6 +12,8 @@ permissions:
 jobs:
   test:
     runs-on: ubuntu-latest
+    env:
+      PAGES_DESTINATION_DIR: reports
 
     steps:
       - name: Checkout
@@ -54,7 +56,7 @@ jobs:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           publish_branch: gh-pages
           publish_dir: target/site/allure-maven
-          destination_dir: reports
+          destination_dir: ${{ env.PAGES_DESTINATION_DIR }}
           keep_files: true
 
       - name: Fail job when tests fail

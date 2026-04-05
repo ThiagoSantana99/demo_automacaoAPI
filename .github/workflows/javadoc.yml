@@ -16,6 +16,8 @@ permissions:
 jobs:
   generate:
     runs-on: ubuntu-latest
+    env:
+      PAGES_DESTINATION_DIR: javadoc
 
     steps:
       - name: Checkout
@@ -44,5 +46,5 @@ jobs:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           publish_branch: gh-pages
           publish_dir: target/site/javadocs
-          destination_dir: javadoc
+          destination_dir: ${{ env.PAGES_DESTINATION_DIR }}
           keep_files: true
