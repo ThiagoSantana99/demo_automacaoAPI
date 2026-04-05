@@ -1,6 +1,8 @@
 # Dog API automated tests
 
-Projeto de testes automatizados para a Dog API com Java 17, Maven, RestAssured e Allure.
+Projeto de testes automatizados para a Dog API https://dog.ceo/dog-api/documentation. A aplicação permitirá que os usuários visualizem imagens de diferentes raças de cães, bem como aprendam sobre as raças disponíveis.
+
+Projeto utiliza Java 17, Maven, RestAssured e Allure.
 
 ## O que cobre
 
