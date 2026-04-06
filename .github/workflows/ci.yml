@@ -38,6 +38,13 @@ jobs:
       - name: Generate JavaDoc
         run: mvn -B clean test-compile javadoc:test-javadoc
 
+      - name: Inspect generated outputs
+        run: |
+          ls -la target
+          ls -la target/allure-report || true
+          ls -la target/site || true
+          ls -la target/reports || true
+
       - name: Prepare GitHub Pages content
         run: |
           mkdir -p target/pages/reports
@@ -45,7 +52,7 @@ jobs:
           mkdir -p target/reports/testapidocs
           cp README.md target/pages/README.md
           ALLURE_DIR=""
-          if [ -d "target/allure-report" ]; then
+          if [ -d "target/allure-report/index.html" ] || [ -d "target/allure-report" ]; then
             ALLURE_DIR="target/allure-report"
           elif [ -d "target/site/allure-maven" ]; then
             ALLURE_DIR="target/site/allure-maven"
