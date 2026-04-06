@@ -62,22 +62,13 @@ O workflow em `.github/workflows/ci.yml` executa:
 1. `mvn clean test`
 2. Instala o Allure CLI via `npm`
 3. Gera o relatório Allure em `target/allure-report`
-4. Gera o JavaDoc
-5. Publica o site do projeto no GitHub Pages com `README`, `reports` e `javadoc`
+4. Publica o relatório no GitHub Pages em `https://thiagosantana99.github.io/demo_automacaoAPI/reports/`
 
-As URLs publicadas ficam:
+## Publicação
+
+O conteúdo publicado em GitHub Pages fica disponível em:
 
 - `https://thiagosantana99.github.io/demo_automacaoAPI/reports/`
-- `https://thiagosantana99.github.io/demo_automacaoAPI/javadoc/`
-- `https://thiagosantana99.github.io/demo_automacaoAPI/README.md`
-
-## Gerar Javadocs localmente
-
-```bash
-mvn -B clean test-compile javadoc:test-javadoc
-```
-
-A documentação gerada fica em `target/site/javadocs`.
 
 ## Estrutura
 
